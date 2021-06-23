@@ -1,1 +1,1 @@
-# pathfinderAlgoritm
+# ApathfinderAlgorithm
