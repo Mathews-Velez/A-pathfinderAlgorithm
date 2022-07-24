@@ -86,7 +86,7 @@ def astar(maze, start, end):
             child.g = current_node.g + 1
             child.h = ((child.position[0] - end_node.position[0]) ** 2) + ((child.position[1] - end_node.position[1]) ** 2)
             child.f = child.g + child.h
-            print(f"For node {child.position} F value: {child.f} G value: {child.g} H value: {child.h} ")
+            # print(f"For node {child.position} F value: {child.f} G value: {child.g} H value: {child.h} ")
 
             # Child is already in the open list
             for open_node in open_list:
@@ -96,6 +96,20 @@ def astar(maze, start, end):
             # Add the child to the open list
             open_list.append(child)
 
+def printMaze(maze):
+    for i in maze:
+        print(i)    
+def showPath(maze,path):
+#iterate through each coordinate in path to acess the maze
+    for node in path:
+        #take the first index of the pair as x to access the first layer of the maze
+        #take the second index of the pair as y to acess the second layer of the maze
+        #change value at this idex to indicate it is part of the path
+        maze[node[0]][node[1]] = 7
+    return maze
+class Maze():
+    def __init__(self, length, height):
+        self
 
 def main():
 
@@ -110,12 +124,16 @@ def main():
             [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-    start = (3, 0)
-    end = (7, 6)
+    start = (1, 0)
+    end = (5, 9)
 
     path = astar(maze, start, end)
+    print("Given maze")
+    printMaze(maze)
+    print("\n" *3)
     print(path)
-
+    print("\n" *3)
+    printMaze(showPath(maze,path))
 
 if __name__ == '__main__':
     main()

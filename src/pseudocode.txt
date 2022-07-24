@@ -40,3 +40,13 @@ g = the movement cost to move from the starting point to a given square on the g
   
     e) push q on the closed list
     end (while loop)
+Program sctructure
+- app starts with asking user how large they would like their grid to be (n x n)
+-print grid by said size
+-give the user 3 options to choose from
+-Edit mode:
+	Allow user to place walls, start point and end point
+-Init:
+	Run the simulation
+-Reset:
+	Clear the grid
